@@ -8,13 +8,10 @@ const assertEqual = function(actual, expected) {
   } else (console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`));
 };
 
-
-const head = function(arr) {
-  // retun the first element in the array
-  return arr[0];
+const tail = function(arr) {
+  //make new array omitting the first element
+  return arr.slice(1);
 };
 
-
-
-assertEqual(head([5, 6, 7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+const result = tail(["Hello", "Lighthouse", "Labs"]);
+assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail!
