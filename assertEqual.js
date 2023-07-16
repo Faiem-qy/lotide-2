@@ -6,8 +6,11 @@ const assertEqual = function(actual, expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 
     // Otherwise it should print (console.log) the following: Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  } else (console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`));
-};
+  } else {
+    (console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`));
+  }
+}
+  ;
 
 // TEST CODE
 assertEqual("Lighthouse Labs", "Bootcamp");
