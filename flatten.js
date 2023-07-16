@@ -36,3 +36,16 @@ const assertArraysEqual = function(arr1, arr2) {
     console.log(`🛑🛑 Assertion Failed: [${arr1}] !== [${arr2}]`);
   }
 };
+
+
+const flatten = function(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      return arr.flat();
+    }
+  }
+  return arr;
+};
+
+
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]))
