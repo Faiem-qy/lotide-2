@@ -1,4 +1,3 @@
-// FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
 
   // if the values match, print the following: Assertion Passed: [actual] === [expected] (but with the values filled in);
@@ -24,9 +23,14 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-//tests
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => false
 
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => false
+const assertArraysEqual = function(arr1, arr2) {
+  // use eqArrays to compare the arrays
+  if (eqArrays(arr1, arr2)) {
+    // if the arrays are equal
+    console.log(`✅✅ Assertion Passed: [${arr1}] === [${arr2}]`);
+  } else {
+    // if the arrays are not equal
+    console.log(`🛑🛑 Assertion Failed: [${arr1}] !== [${arr2}]`);
+  }
+};
