@@ -26,7 +26,7 @@ This project was created and published by me as part of my learnings at Lighthou
 
 The following functions are currently implemented:
 
-* `function1(head)`: description
+* `function1(head)`:  Takes in an array and returns the first element in the array
 * `function2(tail)`: description
 * `function3(...)`: description
 * `function3(...)`: description
