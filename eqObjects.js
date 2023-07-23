@@ -41,21 +41,41 @@ const assertArraysEqual = function(arr1, arr2) {
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
-// store keys in vairables for object 1 and object 2
-  const keys1 = Object.keys(object1)
-  const keys2 = Object.keys(object2)
+  // store keys in vairables for object 1 and object 2
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
 
-//compare length of keys in both objects
+  //compare length of keys in both objects
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
+  //loop using a for of loop to compare keys 
+  for (const key of keys1) {
+    const value1 = object1[key];
+    const value2 = object2[key];
 
-//loop using a for of loop to compare keys 
-  
-
+    if (Array.isArray(value1) && Array.isArray(value2)) {
+      //If both values are arrays, use eqArrays function
+      if (!eqArrays(value1, value2)) {
+        return false;
+      } else {
+        // compare the primitive values directly
+        if (value1 !== value1) {
+          return false;
+        }
+      }
+    }
+  }
+  return true;
 };
 
 
 const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject= { size: "medium", color: "red" };
-eqObjects(shirtObject , anotherShirtObject); // => true
+const anotherShirtObject = { size: "medium", color: "red" };
+console.log(eqObjects(shirtObject, anotherShirtObject)); // => true
 
-const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
-eqObjects(shirtObject , longSleeveShirtObject); // => false
+const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
+console.log(eqObjects(shirtObject, longSleeveShirtObject)); // => false
+
+
+assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
