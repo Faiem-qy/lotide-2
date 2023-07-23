@@ -55,14 +55,19 @@ const eqObjects = function(object1, object2) {
     const value1 = object1[key];
     const value2 = object2[key];
 
+    //if value 1 and 2 are arrays
     if (Array.isArray(value1) && Array.isArray(value2)) {
+      // if the arrays are not equal
       if (!eqArrays(value1, value2)) {
         return false;
       }
+      //if value 1 and 2 are objects
     } else if (typeof value1 === 'object' && typeof value2 === 'object') {
+      //if nested obects are not equal
       if (!eqObjects(value1, value2)) {
         return false;
       }
+      // if value1 is not equal to value 2
     } else if (value1 !== value2) {
       return false;
     }
@@ -71,12 +76,24 @@ const eqObjects = function(object1, object2) {
 };
 
 
-const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject = { size: "medium", color: "red" };
-console.log(eqObjects(shirtObject, anotherShirtObject)); // => true
 
-const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-console.log(eqObjects(shirtObject, longSleeveShirtObject)); // => false
+// FUNCTION IMPLEMENTATION
+const assertObjectsEqual = function(actual, expected) {
+
+  const inspect = require('util').inspect;
+  //compare objects 
+  if (eqObjects(actual, expected)) {
+    console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+  };
+};
 
 
-assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
+// Example test cases:
+const obj1 = { a: '13', b: 52 };
+const obj2 = { b: 52, a: '13' };
+const obj3 = { a: '1', b: 37 };
+
+assertObjectsEqual(obj1, obj2);
+assertObjectsEqual(obj1, obj3);
