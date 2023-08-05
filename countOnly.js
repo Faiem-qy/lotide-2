@@ -1,20 +1,6 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
+const assertEqual = require('./assertEqual')
 
-  // if the values match, print the following: Assertion Passed: [actual] === [expected] (but with the values filled in);
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 
-    // Otherwise it should print (console.log) the following: Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  } else {
-    (console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`));
-  }
-}
-  ;
-
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
 
 
 // allItems: an array of strings that we need to look through
@@ -25,9 +11,7 @@ const countOnly = function(allItems, itemsToCount) {
 
   //loop over all items
   for (const item of allItems) {
-    console.log(item);
-
-
+    
     //only count specific items
     if (itemsToCount[item]) {
       // increment the counter for each item:
@@ -62,3 +46,7 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
+
+
+
+module.exports = countOnly

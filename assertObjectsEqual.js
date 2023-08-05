@@ -22,3 +22,5 @@ const obj3 = { a: '1', b: 37 };
 
 assertObjectsEqual(obj1, obj2);
 assertObjectsEqual(obj1, obj3);
+
+module.exports = assertObjectsEqual

@@ -1,20 +1,5 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
 
-  // if the values match, print the following: Assertion Passed: [actual] === [expected] (but with the values filled in);
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-
-    // Otherwise it should print (console.log) the following: Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  } else {
-    (console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`));
-  }
-}
-  ;
-
-// // TEST CODE
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
+const assertEqual = require('./assertEqual')
 
 const findKey = function(object, callback) {
   //iterate over object and  return key if callback return true
@@ -58,3 +43,5 @@ const data4 = {
 };
 const result3 = findKey(data4, x => x.stars === 2);
 assertEqual(result3, "key3"); 
+
+module.exports = findKey

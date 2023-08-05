@@ -1,16 +1,5 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
+const assertEqual = require('./assertEqual')
 
-  // if the values match, print the following: Assertion Passed: [actual] === [expected] (but with the values filled in);
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-
-    // Otherwise it should print (console.log) the following: Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  } else {
-    (console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`));
-  }
-}
-  ;
 
 // TEST CODE
 assertEqual("Lighthouse Labs", "Bootcamp");
@@ -36,3 +25,5 @@ const countLetters = function(inputString) {
 };
 
 console.log(countLetters("LHL"));
+
+module.exports = countLetters
