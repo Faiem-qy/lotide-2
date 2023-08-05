@@ -6,4 +6,5 @@ module.exports = {
   head: head,
   tail: tail,
   middle: middle
+  
 }
