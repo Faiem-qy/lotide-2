@@ -1,12 +1,6 @@
 const assertEqual = require('./assertEqual')
 
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-
-
-
 
 // Take a sentence as a string and then return the count of each of the letters in that sentence
 const countLetters = function(inputString) {

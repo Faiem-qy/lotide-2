@@ -15,6 +15,13 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
+// Test case 1
+const result1 = eqArrays([1, 2, 3], [1, 2, 3]);
+assertEqual(result1, true);
+
+// Test case 2
+const result2 = eqArrays([1, 2, 3], [1, 2, 4]);
+assertEqual(result2, false);
 
 
 module.exports = eqArrays;
