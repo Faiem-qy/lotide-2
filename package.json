@@ -1,5 +1,5 @@
 {
-  "name": "lotide",
+  "name": "@faiem-qy/lotide",
   "version": "1.0.0",
   "description": "A mini clone of the [Lodash](https://lodash.com) library.",
   "main": "assertArraysEqual.js",
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/Faiem-qy/lotide-2.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Faiem-qy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Faiem-qy/lotide-2/issues"
